@@ -1,3 +1,4 @@
 {
-  "python.pythonPath": "VirtualEnvProject\\Scripts\\python.exe"
+  "python.pythonPath": "VirtualEnvProject\\Scripts\\python.exe",
+  "python.autoComplete.extraPaths": ["./OOP", "./flask_web"]
 }
