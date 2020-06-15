@@ -12,6 +12,12 @@ class Bill:
         normal_total = self.calculate()
         return normal_total - normal_total * discount/100
 
+    # Static Method is accessible directly from a Class, not only from an object of a class.
+    # Because of this we don't use "self" keyword, which coresponds to an Object.
+    @staticmethod
+    def check_discount(overall_sum, discount):
+        return overall_sum - overall_sum * discount/100
+
     def calculate(self):
         cost = 0.0
         for meal in self.meals:

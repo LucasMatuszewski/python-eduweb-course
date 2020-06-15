@@ -21,7 +21,7 @@ def main():
 
     while action != "End":
         action = input(
-            "What do you want to do? [Add , Sum, Discount, Save, End]")
+            "What do you want to do? [Add , Sum, Discount, Check, Save, End]")
 
         if action == "Add":
             # ask_for_meal returns 2 variables and we can save them like this:
@@ -32,6 +32,9 @@ def main():
         elif action == "Discount":
             discount = view.ask_for_discount()
             print(bill.add_discount(discount))
+        elif action == "Check":
+            # When we call Static Method we use Class itself (Bill), not an object (bill)
+            print(Bill.check_discount(100, 10))
         elif action == "Save":
             filename = view.ask_for_filename()
             bill.print_to_file_short(filename)

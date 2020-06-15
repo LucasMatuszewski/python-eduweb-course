@@ -7,3 +7,5 @@ class Meal:
         self.name = name
         self.price = price
         super().__init__()
+
+# Self correspond to Object of a Class created with constructor
