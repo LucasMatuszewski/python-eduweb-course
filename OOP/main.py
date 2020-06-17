@@ -27,6 +27,9 @@ def main():
             # ask_for_meal returns 2 variables and we can save them like this:
             name, price = view.ask_for_meal()
             bill.add_meal(name, price)
+        elif action == "Service":
+            name, price, guests_number = view.ask_for_service()
+            bill.add_service(name, price, guests_number)
         elif action == "Sum":
             print(bill.calculate())
         elif action == "Discount":

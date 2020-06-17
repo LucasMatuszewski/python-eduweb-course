@@ -1,4 +1,5 @@
 from meal import Meal
+from service import Service
 
 
 class Bill:
@@ -39,10 +40,19 @@ class Bill:
         # Shorter syntax without manual closing a file:
         with open(filename, "w+") as file:
             for meal in self.meals:
-                file.write(
-                    f"Product name: {meal.name}, Price: {meal.price} \n")
+                # "isinstance()" checks if an object is of the provided class
+                if isinstance(meal, Meal):
+                    file.write(
+                        f"Product name: {meal.name}, Price: {meal.price} \n")
+                elif isinstance(meal, Service):
+                    file.write(
+                        f"Product name: {meal.name}, Price: {meal.price}, Guests: {meal.guest_number} \n")
 
     def add_meal(self, name, price):
         # We can use class to create new object of this class:
         meal = Meal(name, price)
         self.meals.append(meal)
+
+    def add_service(self, name, price, guest_number):
+        service = Service(name, price, guest_number)
+        self.meals.append(service)

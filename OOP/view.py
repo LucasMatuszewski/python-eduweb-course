@@ -8,6 +8,13 @@ def ask_for_meal():
     return name, float(price)
 
 
+def ask_for_service():
+    name = input("Provide meal name: ")
+    price = input("Provide meal price: ")
+    guests_number = input("Provide number of guests: ")
+    return name, float(price), guests_number
+
+
 def ask_for_discount():
     discount = input("Provide discount level (%): ")
     return float(discount)
